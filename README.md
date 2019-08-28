@@ -4,7 +4,7 @@
 ## SYNOPSIS
     Enumerate user profiles on local and remote computers, and retrieve the users' mapped drives.
 
-##SYNTAX
+## SYNTAX
     Get-RemoteMappedDrive [-ComputerName] <String[]> [-maxConcurrentJobs <Int32>] [-timeLimitperJob <Int32>] [-showStatus] [<CommonParameters>]
 
 
