@@ -1,14 +1,14 @@
 ## NAME
     Get-RemoteMappedDrive
 
-##SYNOPSIS
+## SYNOPSIS
     Enumerate user profiles on local and remote computers, and retrieve the users' mapped drives.
 
 ##SYNTAX
     Get-RemoteMappedDrive [-ComputerName] <String[]> [-maxConcurrentJobs <Int32>] [-timeLimitperJob <Int32>] [-showStatus] [<CommonParameters>]
 
 
-##DESCRIPTION
+## DESCRIPTION
     Enumerate user profiles on local and remote computers, and retrieve the users' mapped drives. 
 
     Author: Richard West
@@ -16,7 +16,7 @@
     Contact: richard@premiumsource.solutions
 
 
-##PARAMETERS
+## PARAMETERS
     -ComputerName <String[]>
 
         Required?                    true
@@ -57,11 +57,11 @@
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
         OutBuffer, PipelineVariable, and OutVariable.
 
-##INPUTS
+## INPUTS
     [String[]] #Computer Name(s).
 
 
-##OUTPUTS
+## OUTPUTS
     [PSOBJECT]
         #Properties:
             [String]ScanDate #Format yyyy-MM-dd-HH-mm-ss
@@ -71,7 +71,7 @@
             [String]Letter
             [String]RemotePath
 
-##EXAMPLES
+## EXAMPLES
 ### EXAMPLE 1
 
     PS C:\>Get All Users' Mapped Drives on Computer, "MyComputerName". Format output as a table.
@@ -79,14 +79,14 @@
     PS> Get-RemoteMappedDrive -ComputerName "MyComputerName"| Select-Object UserName, ComputerName, Name, Value, ScanDate | Format-Table
 
 
-###EXAMPLE 2
+### EXAMPLE 2
 
     PS C:\>Get All Users' Mapped Drives on Computers, "ComputerName1" and "ComputerName2".
 
     PS> Get-RemoteMappedDrive -ComputerName "ComputerName1", "ComputerName2" | Select-Object UserName, ComputerName, Name, Value, ScanDate | Format-Table
 
 
-###EXAMPLE 3
+### EXAMPLE 3
 
     PS C:\>Get All Users' Mapped Drives on Computers, "ComputerName1" and "ComputerName2". Export to CSV.
 
@@ -95,21 +95,21 @@
 
 
 
-###EXAMPLE 4
+### EXAMPLE 4
 
     PS C:\>Get All Users' Mapped Drives on Computers, "ComputerName1" and "ComputerName2". Configure [int]maxConcurrentJobs and [int]timeLimitperJob.
 
     PS> Get-RemoteMappedDrive -ComputerName "ComputerName1", "ComputerName2" -maxConcurrentJobs 10 -timeLimitperJob 2
 
 
-###EXAMPLE 5
+### EXAMPLE 5
 
     PS C:\>Pipe computer names into Get-RemoteMappedDrive
 
     PS> $ComputerList = "Computer1", "Computer2", "Computer3"
     PS> $ComputerList | Get-RemoteMappedDrive -showStatus
 
-##RELATED LINKS
+## RELATED LINKS
     Project URI: 'https://github.com/richardwestseattle/Get-RemoteMappedDrive'
     Website: 'http://premiumsource.solutions'
     Contact: 'richard@premiumsource.solutions' 
